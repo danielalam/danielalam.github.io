@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installing USB Wifi Adapter on the BeagleBone Black
+title: Installing USB WiFi Adapter on the BeagleBone Black
 date:   2014-05-23 15:51:27
 categories: beaglebone
 tags: electronics beaglebone
@@ -15,8 +15,7 @@ The best part about these two adapters is that the latest release of the BeagleB
 for these modules. Both are manufactured by [Logic Supply](http://inspire.logicsupply.com/). UWN200 has an SMA antenna for extra range, otherwise
 it is similar to UWN100.
 
-<----------Photo here!
-
+![placeholder](/public/images/beaglebone/unw100-and-unw200-usb-wifi-adapters.jpg "UNW100 and UNW200 USB WiFi adapters")
 
 * [UWN100](http://www.logicsupply.com/components/networking/wireless/uwn100/) - $9.95
 * [UWN200](http://www.logicsupply.com/components/networking/wireless/uwn200/) - $12.95
@@ -25,22 +24,21 @@ it is similar to UWN100.
 
 The manufacturer has a nice [installation guide and troubleshooting](http://inspire.logicsupply.com/p/installing-wifi.html) on their website.
 
-To connect to WiFi automatically you will first need to determine the device name
+To connect to WiFi automatically you will first need to determine the device name. For that SSH to your BeagleBone
+and use the following command:
 
+{% highlight bash %}
 iwlist scan
-* Toggleable sliding sidebar (built with only CSS) via **☰** link in top corner
-* Sidebar includes support for textual modules and a dynamically generated navigation with active link support
-* Two orientations for content and sidebar, default (left sidebar) and [reverse](https://github.com/poole/lanyon#reverse-layout) (right sidebar), available via `<body>` classes
-* [Eight optional color schemes](https://github.com/poole/lanyon#themes), available via `<body>` classes
+{% endhighlight %}
 
-[Head to the readme](https://github.com/poole/lanyon#readme) to learn more.
+{% highlight bash %}
+nano /etc/network/interfaces
+{% endhighlight %}
 
-### Browser support
 
-Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.
-
-### Download
-
-Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.
-
-Thanks!
+{% highlight bash %}
+auto ra0
+iface ra0 inet dhcp
+wpa-ssid "SSID"
+wpa-psk "YOUR-WIFI-PASSWORD"
+{% endhighlight %}

@@ -11,7 +11,7 @@
 
   <title>
     
-      Installing USB Wifi Adapter on the BeagleBone Black &middot; Daniel Alam
+      Installing USB WiFi Adapter on the BeagleBone Black &middot; Daniel Alam
     
   </title>
 
@@ -93,7 +93,7 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Installing USB Wifi Adapter on the BeagleBone Black</h1>
+  <h1 class="post-title">Installing USB WiFi Adapter on the BeagleBone Black</h1>
   <span class="post-date">23 May 2014</span>
   <p>Unfortunately, <a href="http://beagleboard.org/black">BeagleBone Black</a> doesn’t have a built in WiFi module, but
 there are a few USB WiFi adapters that can solve this problem.</p>
@@ -104,7 +104,7 @@ there are a few USB WiFi adapters that can solve this problem.</p>
 for these modules. Both are manufactured by <a href="http://inspire.logicsupply.com/">Logic Supply</a>. UWN200 has an SMA antenna for extra range, otherwise
 it is similar to UWN100.</p>
 
-<p>&lt;———-Photo here!</p>
+<p><img src="/public/images/beaglebone/unw100-and-unw200-usb-wifi-adapters.jpg" alt="placeholder" title="UNW100 and UNW200 USB WiFi adapters" /></p>
 
 <ul>
   <li><a href="http://www.logicsupply.com/components/networking/wireless/uwn100/">UWN100</a> - $9.95</li>
@@ -115,25 +115,18 @@ it is similar to UWN100.</p>
 
 <p>The manufacturer has a nice <a href="http://inspire.logicsupply.com/p/installing-wifi.html">installation guide and troubleshooting</a> on their website.</p>
 
-<p>To connect to WiFi automatically you will first need to determine the device name</p>
+<p>To connect to WiFi automatically you will first need to determine the device name. For that SSH to your BeagleBone
+and use the following command:</p>
 
-<p>iwlist scan
-* Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner
-* Sidebar includes support for textual modules and a dynamically generated navigation with active link support
-* Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes
-* <a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">iwlist scan</code></pre></div>
 
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">nano /etc/network/interfaces</code></pre></div>
 
-<h3 id="browser-support">Browser support</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">auto ra0
+iface ra0 inet dhcp
+wpa-ssid <span class="s2">&quot;SSID&quot;</span>
+wpa-psk <span class="s2">&quot;YOUR-WIFI-PASSWORD&quot;</span></code></pre></div>
 
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.</p>
-
-<p>Thanks!</p>
 
 </div>
 
