@@ -11,7 +11,7 @@
 
   <title>
     
-      Installing USB Wifi Adapter on the BeagleBone Black &middot; Daniel Alam
+      Installing USB WiFi Adapter on the BeagleBone Black &middot; Daniel Alam
     
   </title>
 
@@ -93,45 +93,40 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Installing USB Wifi Adapter on the BeagleBone Black</h1>
+  <h1 class="post-title">Installing USB WiFi Adapter on the BeagleBone Black</h1>
   <span class="post-date">23 May 2014</span>
-  <p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It’s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
+  <p>Unfortunately, <a href="http://beagleboard.org/black">BeagleBone Black</a> doesn’t have a built in WiFi module, but
+there are a few USB WiFi adapters that can solve this problem.</p>
 
-<h3 id="built-on-poole">Built on Poole</h3>
+<h3 id="uwn100-and-uwn200">UWN100 and UWN200</h3>
 
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
+<p>The best part about these two adapters is that the latest release of the BeagleBone Black, with a Debian image (2013-09-04 and up), already includes the drivers
+for these modules. Both are manufactured by <a href="http://inspire.logicsupply.com/">Logic Supply</a>. UWN200 has an SMA antenna for extra range, otherwise
+it is similar to UWN100.</p>
 
-<ul>
-  <li>Complete Jekyll setup included (layouts, config, <a href="/404">404</a>, <a href="/atom.xml">RSS feed</a>, posts, and <a href="/about">example page</a>)</li>
-  <li>Mobile friendly design and development</li>
-  <li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-  <li>Support for a wide gamut of HTML elements</li>
-  <li>Related posts (time-based, because Jekyll) below each post</li>
-  <li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-
-<h3 id="lanyon-features">Lanyon features</h3>
-
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
+<p><img src="/public/images/beaglebone/unw100-and-unw200-usb-wifi-adapters.jpg" alt="placeholder" title="UNW100 and UNW200 USB WiFi adapters" /></p>
 
 <ul>
-  <li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-  <li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-  <li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-  <li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
+  <li><a href="http://www.logicsupply.com/components/networking/wireless/uwn100/">UWN100</a> - $9.95</li>
+  <li><a href="http://www.logicsupply.com/components/networking/wireless/uwn200/">UWN200</a> - $12.95</li>
 </ul>
 
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
+<h3 id="setting-up">Setting up</h3>
 
-<h3 id="browser-support">Browser support</h3>
+<p>The manufacturer has a nice <a href="http://inspire.logicsupply.com/p/installing-wifi.html">installation guide and troubleshooting</a> on their website.</p>
 
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
+<p>To connect to WiFi automatically you will first need to determine the device name. For that SSH to your BeagleBone
+and use the following command:</p>
 
-<h3 id="download">Download</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">iwlist scan</code></pre></div>
 
-<p>Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">nano /etc/network/interfaces</code></pre></div>
 
-<p>Thanks!</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">auto ra0
+iface ra0 inet dhcp
+wpa-ssid <span class="s2">&quot;SSID&quot;</span>
+wpa-psk <span class="s2">&quot;YOUR-WIFI-PASSWORD&quot;</span></code></pre></div>
+
 
 </div>
 
