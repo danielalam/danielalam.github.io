@@ -11,7 +11,7 @@
 
   <title>
     
-      About &middot; Daniel Alam
+      Installing USB WiFi Adapter on the BeagleBone Black &middot; Daniel Alam
     
   </title>
 
@@ -55,7 +55,7 @@
     <!---->
       <!---->
         <!---->
-          <!--<a class="sidebar-nav-item active" href="/about.html">About</a>-->
+          <!--<a class="sidebar-nav-item" href="/about.html">About</a>-->
         <!---->
       <!---->
     <!---->
@@ -92,38 +92,49 @@
       </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">About</h1>
-  <p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+        <div class="post">
+  <h1 class="post-title">Installing USB WiFi Adapter on the BeagleBone Black</h1>
+  <span class="post-date">23 May 2014</span>
+  <p>Unfortunately, <a href="http://beagleboard.org/black">BeagleBone Black</a> doesn’t have a built in WiFi module, but
+there are a few USB WiFi adapters that can solve this problem.</p>
 
-<p>In the novel, <em>The Strange Case of Dr. Jeykll and Mr. Hyde</em>, Mr. Poole is Dr. Jekyll’s virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It’s made by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+<h3 id="uwn100-and-uwn200">UWN100 and UWN200</h3>
 
-<p>There are currently two themes built on Poole:</p>
+<p>The best part about these two adapters is that the latest release of the BeagleBone Black, with a Debian image (2013-09-04 and up), already includes the drivers
+for these modules. Both are manufactured by <a href="http://inspire.logicsupply.com/">Logic Supply</a>. UWN200 has an SMA antenna for extra range, otherwise
+it is similar to UWN100.</p>
 
-<ul>
-  <li><a href="http://hyde.getpoole.com">Hyde</a></li>
-  <li><a href="http://lanyon.getpoole.com">Lanyon</a></li>
-</ul>
-
-<p>Learn more and contribute on <a href="https://github.com/poole">GitHub</a>.</p>
-
-<h2 id="setup">Setup</h2>
-
-<p>Some fun facts about the setup of this project include:</p>
+<p><img src="/public/images/beaglebone/unw100-and-unw200-usb-wifi-adapters.jpg" alt="placeholder" title="UNW100 and UNW200 USB WiFi adapters" /></p>
 
 <ul>
-  <li>Built for <a href="http://jekyllrb.com">Jekyll</a></li>
-  <li>Developed on GitHub and hosted for free on <a href="https://pages.github.com">GitHub Pages</a></li>
-  <li>Coded with <a href="http://sublimetext.com">Sublime Text 2</a>, an amazing code editor</li>
-  <li>Designed and developed while listening to music like <a href="https://soundcloud.com/maddecent/sets/blood-bros-series">Blood Bros Trilogy</a></li>
+  <li><a href="http://www.logicsupply.com/components/networking/wireless/uwn100/">UWN100</a> - $9.95</li>
+  <li><a href="http://www.logicsupply.com/components/networking/wireless/uwn200/">UWN200</a> - $12.95</li>
 </ul>
 
-<p>Have questions or suggestions? Feel free to <a href="https://github.com/poole/issues/new">open an issue on GitHub</a> or <a href="https://twitter.com/mdo">ask me on Twitter</a>.</p>
+<h3 id="setting-up">Setting up</h3>
 
-<p>Thanks for reading!</p>
+<p>The manufacturer has a nice <a href="http://inspire.logicsupply.com/p/installing-wifi.html">installation guide and troubleshooting</a> on their website.</p>
 
+<p>To connect to WiFi automatically you will first need to determine the device name. For that SSH to your BeagleBone
+and use the following command:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">iwlist scan</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">nano /etc/network/interfaces</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">auto ra0
+iface ra0 inet dhcp
+wpa-ssid <span class="s2">&quot;SSID&quot;</span>
+wpa-psk <span class="s2">&quot;YOUR-WIFI-PASSWORD&quot;</span></code></pre></div>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
 </div>
 
       </div>
