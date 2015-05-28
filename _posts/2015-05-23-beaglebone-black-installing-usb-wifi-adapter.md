@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Introducing Lanyon
-date:   2015-12-31 15:51:27
-categories: jekyll update
+title: Installing USB Wifi Adapter on the BeagleBone Black
+date:   2014-05-23 15:51:27
+categories: beaglebone
+tags: electronics beaglebone
 ---
 
 Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.

@@ -1,13 +1,17 @@
 ---
 layout: post
-title: Introducing Lanyon
-date:   2015-12-31 15:51:27
+title: Tricopter
+date:   2015-05-25 15:51:27
 categories: jekyll update
+tags: electronics drones arduino
 ---
 
 Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
 ### Built on Poole
+
+![placeholder](/public/images/drones/IMG_5698.JPG "Tricopter and remote controller")
+![placeholder](/public/images/drones/IMG_5508.JPG "Assembling tricopter")
 
 Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by [@mdo](https://twitter.com/mdo). Poole, and every theme built on it (like Lanyon here) includes the following:
 

@@ -1,6 +1,8 @@
 ---
 layout: post
-title: What's Jekyll?
+title:  "Welcome to Jekyll!"
+date:   2013-12-31 15:51:27
+categories: jekyll update
 ---
 
 [Jekyll](http://jekyllrb.com) is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From [the project's readme](https://github.com/mojombo/jekyll/blob/master/README.markdown):

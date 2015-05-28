@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Introducing Lanyon
-date:   2015-12-31 15:51:27
+title: Node.js, Beaglebone Black and NeoPixels
+date:   2015-05-24 15:51:27
 categories: jekyll update
+tags: electronics jenkins beaglebone
 ---
 
 Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
