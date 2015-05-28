@@ -4,7 +4,7 @@
  <title>Daniel Alam</title>
  <link href="http://danielalam.github.io/atom.xml" rel="self"/>
  <link href="http://danielalam.github.io/"/>
- <updated>2015-05-27T22:39:12-07:00</updated>
+ <updated>2015-05-28T00:10:40-07:00</updated>
  <id>http://danielalam.github.io</id>
  <author>
    <name>Daniel Alam</name>
@@ -17,31 +17,33 @@
    <link href="http://danielalam.github.io/beaglebone/2014/05/23/beaglebone-black-installing-usb-wifi-adapter.html"/>
    <updated>2014-05-23T08:51:27-07:00</updated>
    <id>http://danielalam.github.io/beaglebone/2014/05/23/beaglebone-black-installing-usb-wifi-adapter</id>
-   <content type="html">&lt;p&gt;Lanyon is an unassuming &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; theme that places content first by tucking away navigation in a hidden drawer. It’s based on &lt;a href=&quot;http://getpoole.com&quot;&gt;Poole&lt;/a&gt;, the Jekyll butler.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Unfortunately, &lt;a href=&quot;http://beagleboard.org/black&quot;&gt;BeagleBone Black&lt;/a&gt; doesn’t have a built in WiFi module, but
+there are a few USB WiFi adapters that can solve this problem.&lt;/p&gt;
 
-&lt;h3 id=&quot;built-on-poole&quot;&gt;Built on Poole&lt;/h3&gt;
+&lt;h3 id=&quot;uwn100-and-uwn200&quot;&gt;UWN100 and UWN200&lt;/h3&gt;
 
-&lt;p&gt;Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by &lt;a href=&quot;https://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt;. Poole, and every theme built on it (like Lanyon here) includes the following:&lt;/p&gt;
+&lt;p&gt;The best part about these two adapters is that the latest release of the BeagleBone Black, with a Debian image (2013-09-04 and up), already includes the drivers
+for these modules. Both are manufactured by &lt;a href=&quot;http://inspire.logicsupply.com/&quot;&gt;Logic Supply&lt;/a&gt;. UWN200 has an SMA antenna for extra range, otherwise
+it is similar to UWN100.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Complete Jekyll setup included (layouts, config, &lt;a href=&quot;/404&quot;&gt;404&lt;/a&gt;, &lt;a href=&quot;/atom.xml&quot;&gt;RSS feed&lt;/a&gt;, posts, and &lt;a href=&quot;/about&quot;&gt;example page&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Mobile friendly design and development&lt;/li&gt;
-  &lt;li&gt;Easily scalable text and component sizing with &lt;code&gt;rem&lt;/code&gt; units in the CSS&lt;/li&gt;
-  &lt;li&gt;Support for a wide gamut of HTML elements&lt;/li&gt;
-  &lt;li&gt;Related posts (time-based, because Jekyll) below each post&lt;/li&gt;
-  &lt;li&gt;Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;lanyon-features&quot;&gt;Lanyon features&lt;/h3&gt;
-
-&lt;p&gt;In addition to the features of Poole, Lanyon adds the following:&lt;/p&gt;
+&lt;p&gt;&amp;lt;———-Photo here!&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Toggleable sliding sidebar (built with only CSS) via &lt;strong&gt;☰&lt;/strong&gt; link in top corner&lt;/li&gt;
-  &lt;li&gt;Sidebar includes support for textual modules and a dynamically generated navigation with active link support&lt;/li&gt;
-  &lt;li&gt;Two orientations for content and sidebar, default (left sidebar) and &lt;a href=&quot;https://github.com/poole/lanyon#reverse-layout&quot;&gt;reverse&lt;/a&gt; (right sidebar), available via &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/poole/lanyon#themes&quot;&gt;Eight optional color schemes&lt;/a&gt;, available via &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.logicsupply.com/components/networking/wireless/uwn100/&quot;&gt;UWN100&lt;/a&gt; - $9.95&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.logicsupply.com/components/networking/wireless/uwn200/&quot;&gt;UWN200&lt;/a&gt; - $12.95&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;setting-up&quot;&gt;Setting up&lt;/h3&gt;
+
+&lt;p&gt;The manufacturer has a nice &lt;a href=&quot;http://inspire.logicsupply.com/p/installing-wifi.html&quot;&gt;installation guide and troubleshooting&lt;/a&gt; on their website.&lt;/p&gt;
+
+&lt;p&gt;To connect to WiFi automatically you will first need to determine the device name&lt;/p&gt;
+
+&lt;p&gt;iwlist scan
+* Toggleable sliding sidebar (built with only CSS) via &lt;strong&gt;☰&lt;/strong&gt; link in top corner
+* Sidebar includes support for textual modules and a dynamically generated navigation with active link support
+* Two orientations for content and sidebar, default (left sidebar) and &lt;a href=&quot;https://github.com/poole/lanyon#reverse-layout&quot;&gt;reverse&lt;/a&gt; (right sidebar), available via &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes
+* &lt;a href=&quot;https://github.com/poole/lanyon#themes&quot;&gt;Eight optional color schemes&lt;/a&gt;, available via &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/poole/lanyon#readme&quot;&gt;Head to the readme&lt;/a&gt; to learn more.&lt;/p&gt;
 
