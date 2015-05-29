@@ -22,23 +22,46 @@ it is similar to UWN100.
 
 ### Setting up
 
-The manufacturer has a nice [installation guide and troubleshooting](http://inspire.logicsupply.com/p/installing-wifi.html) on their website.
+The manufacturer has a nice [installation and troubleshooting guide](http://inspire.logicsupply.com/p/installing-wifi.html) on their website.
 
-To connect to WiFi automatically you will first need to determine the device name. For that SSH to your BeagleBone
-and use the following command:
+Before turning on your BeagleBone, connect it to the network via ethernet and plug in the USB adapter. Once the board boots up, SSH into it
+and run the following command to determine the adapter's device name
 
 {% highlight bash %}
 iwlist scan
 {% endhighlight %}
 
+It will most likely be something like `ra0`. To make sure the board connects to WiFi automatically on every restart you will need to edit the `interfaces` file
+
 {% highlight bash %}
 nano /etc/network/interfaces
 {% endhighlight %}
 
+For a dynamic IP address include this
 
 {% highlight bash %}
+# The wifi network interface
 auto ra0
 iface ra0 inet dhcp
 wpa-ssid "SSID"
 wpa-psk "YOUR-WIFI-PASSWORD"
 {% endhighlight %}
+
+Alternatively, use this for a static IP
+
+{% highlight bash %}
+# The wifi network interface
+auto ra0
+iface ra0 inet static
+address 192.168.0.2
+netmask 255.255.255.0
+network 192.168.0.0
+broadcast 192.168.0.255
+gateway 192.168.0.1
+dns-nameservers 192.168.0.1, 192.168.0.2, 8.8.8.8
+wpa-ssid "SSID"
+wpa-psk "YOUR-WIFI-PASSWORD"
+{% endhighlight %}
+
+Make sure you unplug the ethernet cable and restart the board. Once it reboots your BeagleBone should automatically connect to
+ your WiFi network.

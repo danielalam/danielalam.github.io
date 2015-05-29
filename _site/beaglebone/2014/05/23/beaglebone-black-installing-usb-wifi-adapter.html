@@ -113,53 +113,47 @@ it is similar to UWN100.</p>
 
 <h3 id="setting-up">Setting up</h3>
 
-<p>The manufacturer has a nice <a href="http://inspire.logicsupply.com/p/installing-wifi.html">installation guide and troubleshooting</a> on their website.</p>
+<p>The manufacturer has a nice <a href="http://inspire.logicsupply.com/p/installing-wifi.html">installation and troubleshooting guide</a> on their website.</p>
 
-<p>To connect to WiFi automatically you will first need to determine the device name. For that SSH to your BeagleBone
-and use the following command:</p>
+<p>Before turning on your BeagleBone, connect it to the network via ethernet and plug in the USB adapter. Once the board boots up, SSH into it
+and run the following command to determine the adapter’s device name</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">iwlist scan</code></pre></div>
 
+<p>It will most likely be something like <code>ra0</code>. To make sure the board connects to WiFi automatically on every restart you will need to edit the <code>interfaces</code> file</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">nano /etc/network/interfaces</code></pre></div>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">auto ra0
+<p>For a dynamic IP address include this</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># The wifi network interface</span>
+auto ra0
 iface ra0 inet dhcp
 wpa-ssid <span class="s2">&quot;SSID&quot;</span>
 wpa-psk <span class="s2">&quot;YOUR-WIFI-PASSWORD&quot;</span></code></pre></div>
 
+<p>Alternatively, use this for a static IP</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># The wifi network interface</span>
+auto ra0
+iface ra0 inet static
+address 192.168.0.2
+netmask 255.255.255.0
+network 192.168.0.0
+broadcast 192.168.0.255
+gateway 192.168.0.1
+dns-nameservers 192.168.0.1, 192.168.0.2, 8.8.8.8
+wpa-ssid <span class="s2">&quot;SSID&quot;</span>
+wpa-psk <span class="s2">&quot;YOUR-WIFI-PASSWORD&quot;</span></code></pre></div>
+
+<p>Make sure you unplug the ethernet cable and restart the board. Once it reboots your BeagleBone should automatically connect to
+ your WiFi network.</p>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2015/05/28/example.html">
-            Example content
-            <small>28 May 2015</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/jekyll/update/2015/05/25/2015-05-25-tricopter-fortis-airframes-titan.html">
-            Tricopter
-            <small>25 May 2015</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/jekyll/update/2015/05/24/2015-05-24-nodejs-beaglebone-neopixels.html">
-            Node.js, Beaglebone Black and NeoPixels
-            <small>24 May 2015</small>
-          </a>
-        </h3>
-      </li>
     
   </ul>
 </div>
