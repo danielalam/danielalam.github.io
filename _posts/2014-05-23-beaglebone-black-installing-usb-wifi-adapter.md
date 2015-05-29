@@ -4,6 +4,7 @@ title: Installing USB WiFi Adapter on the BeagleBone Black
 date:   2014-05-23 15:51:27
 categories: beaglebone
 tags: electronics beaglebone
+comments: True
 ---
 
 Unfortunately, [BeagleBone Black](http://beagleboard.org/black) doesn't have a built in WiFi module, but
